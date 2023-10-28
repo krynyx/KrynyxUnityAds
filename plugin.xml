@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="krynyx-cordova-unityads" version="0.0.1" 
+	xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+	xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>KrynyxUnityAds</name>
+    <description>Plugin to show unity ads on cordova apps</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,device,unity,krynyx,plugin,ads,android</keywords>
+
+    <js-module name="KrynyxUnityAds" src="www/KrynyxUnityAds.js">
+        <clobbers target="KrynyxUnityAds" />
+    </js-module>
+       
+    <platform name="android">
+		<lib-file src="libs/unity-ads.aar"/>
+		<framework src="src/android/plugin.gradle" custom="true" type="gradleReference"/>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="KrynyxUnityAds">
+                <param name="android-package" value="io.github.krynyx.cordova.unityads.KrynyxUnityAds"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+		</config-file>
+        		
+		<config-file file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+			<application android:usesCleartextTraffic="true" />
+		</config-file>
+
+        <source-file src="src/android/KrynyxUnityAds.java" target-dir="src/io/github/krynyx/cordova/unityads/" />
+    </platform>
+</plugin>

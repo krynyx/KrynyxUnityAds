@@ -1,0 +1,28 @@
+{
+  "name": "KrynyxUnityAds",
+  "version": "1.0.0",
+  "description": "An Android Cordova plugin that allows users to show ads on their apps.",
+  "cordova": {
+    "id": "krynyx-cordova-unityads",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "Toast",
+    "Notification",
+    "Message",
+    "Alert",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "Krynyx",
+  "license": "Apache 2.0",
+  "homepage": "https://github.com/krynyx/cordova-unityads-plugin/"
+}

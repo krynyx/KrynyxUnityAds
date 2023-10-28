@@ -1,0 +1,2 @@
+# KrynyxAdmob - Intersticial
+# KrynyxUnityAds
