@@ -1,14 +1,21 @@
 var exec = require('cordova/exec');
 
-
 var KrynyxUnityAds = {
-	loadAds: function (unityGameId, success, error) {
+	initialize: function(unityGameId, success, error) {
 		var options = {};
 		options.unityGameId = unityGameId;
-		exec(success, error, 'KrynyxUnityAds', 'loadAds', [options]);
+		exec(success, error, 'KrynyxUnityAds', 'initializeUnitySDK', [options]);
 	},
-	showAds: function() {
-		exec(null, null, 'KrynyxUnityAds', 'showAds', null);
+	loadBanner: function () {
+		exec(null, null, 'KrynyxUnityAds', 'loadBanner', null);		
+	},
+	loadIntersticial: function (adUnitId, success, error) {
+		var options = {};
+		options.adUnitId = adUnitId;
+		exec(success, error, 'KrynyxUnityAds', 'loadIntersticial', [options]);
+	},
+	showIntersticial: function() {
+		exec(null, null, 'KrynyxUnityAds', 'showIntersticial', null);
 	}
 };
 
